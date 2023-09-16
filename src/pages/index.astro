@@ -26,7 +26,7 @@ const dateTimeOptions: Intl.DateTimeFormatOptions = {
         <SocialList/>
     </section>
     <section aria-label="Latest post" class="mt-16 sm:mt-24">
-        <h2 class="title mb-4">
+        <h2 class="title mb-4 text-lg sm:text-xl">
             <a href={`/posts/${latestPost.slug}/`} class="sm:hover:cactus-link capitalize" rel="prefetch">
                 {latestPost.data.title}
             </a>
@@ -51,7 +51,7 @@ const dateTimeOptions: Intl.DateTimeFormatOptions = {
     {
         !!allPostsByDate.length && (
             <section aria-label="Latest posts" class="mt-16 sm:mt-24">
-                <h2 class="title mb-6 sm:text-xl uppercase">Latest posts</h2>
+                <h2 class="title mb-6 text-lg sm:text-xl uppercase">Latest posts</h2>
                 <div class="grid grid-flow-row auto-rows-max gap-y-16 sm:grid-cols-[2fr_2fr] sm:gap-x-16">
                     {
                         allPostsByDate.map((p) => (
