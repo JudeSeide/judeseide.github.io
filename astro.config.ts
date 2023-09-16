@@ -8,9 +8,12 @@ import remarkUnwrapImages from 'remark-unwrap-images';
 // @ts-ignore:next-line
 import { remarkReadingTime } from './src/utils/remark-reading-time.mjs';
 
-// https://astro.build/config
+// @ts-ignore:next-line
+const site = 'https://jude.engineering/';
+const tempSite = 'https://judeseide.github.io';
+
 export default defineConfig({
-    site: 'https://jude.engineering/',
+    site: tempSite,
     markdown: {
         remarkPlugins: [remarkUnwrapImages, remarkReadingTime],
         remarkRehype: { footnoteLabelProperties: { className: [''] } },
