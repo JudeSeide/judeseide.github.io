@@ -19,13 +19,13 @@ const dateTimeOptions: Intl.DateTimeFormatOptions = {
 <PageLayout meta={{ title: 'Home' }}>
     <section>
         <h1 class="title mb-8 sm:text-4xl capitalize">Hello, World!</h1>
-        <p class="mb-10 text-justify sm:text-xl xl:pr-96 sm:leading-9">
+        <p class="mb-6 sm:mb-10 text-justify sm:text-xl xl:pr-96 sm:leading-9">
             My name is <strong>Jude Séïde</strong> and I'm a <strong>Software Developer</strong> with a knack for <strong>optimizing digital experiences</strong>.
             With over a <strong>decade of experience</strong> in the industry, I bring a wealth of <strong>expertise</strong> to the table.
         </p>
         <SocialList/>
     </section>
-    <section aria-label="Latest post" class="mt-24" d>
+    <section aria-label="Latest post" class="mt-16 sm:mt-24">
         <h2 class="title mb-4">
             <a href={`/posts/${latestPost.slug}/`} class="sm:hover:cactus-link capitalize" rel="prefetch">
                 {latestPost.data.title}
@@ -50,7 +50,7 @@ const dateTimeOptions: Intl.DateTimeFormatOptions = {
     </section>
     {
         !!allPostsByDate.length && (
-            <section aria-label="Latest posts" class="mt-24">
+            <section aria-label="Latest posts" class="mt-16 sm:mt-24">
                 <h2 class="title mb-6 sm:text-xl uppercase">Latest posts</h2>
                 <div class="grid grid-flow-row auto-rows-max gap-y-16 sm:grid-cols-[2fr_2fr] sm:gap-x-16">
                     {

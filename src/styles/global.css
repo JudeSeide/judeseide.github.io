@@ -29,6 +29,6 @@
     }
 
     html body {
-        @apply mx-auto flex min-h-screen max-w-screen-2xl flex-col bg-bgColor px-12 pt-16 font-mono text-sm font-normal text-textColor antialiased;
+        @apply mx-auto flex min-h-screen max-w-screen-2xl flex-col bg-bgColor px-12 pt-8 sm:pt-16 font-mono text-sm font-normal text-textColor antialiased;
     }
 }
