@@ -1,0 +1,39 @@
+---
+const socialLinks = [
+    {
+        name: 'linkedin',
+        link: 'https://ca.linkedin.com/in/judeseide',
+    },
+    {
+        name: 'github',
+        link: 'https://github.com/JudeSeide',
+    },
+    {
+        name: 'email',
+        link: 'mailto:jude.seide+info@gmail.com',
+    },
+];
+---
+
+<div class="flex flex-wrap items-end">
+    <ul class="flex flex-1 items-center sm:flex-initial">
+        {
+            socialLinks.map(({ link, name }) => {
+                const isEmail = name.includes('email') || name.toLowerCase().includes('email');
+
+                return (
+                    <li class="flex">
+                        <a
+                            class="inline-block text-accent sm:hover:cactus-link mr-6"
+                            href={link}
+                            target="_blank"
+                            rel={`noopener noreferrer me ${isEmail ? 'authn' : ''}`}
+                        >
+                            <span>{name}</span>
+                        </a>
+                    </li>
+                );
+            })
+        }
+    </ul>
+</div>

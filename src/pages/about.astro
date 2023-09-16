@@ -1,0 +1,87 @@
+---
+import { Image } from 'astro:assets';
+
+import PageLayout from '@/layouts/Base';
+import dev from '@/assets/dev.svg';
+
+const meta = {
+    title: 'About',
+    description: 'Software engineer, developer, tech enthusiast and consultant located in Montreal, Canada.',
+};
+---
+
+<PageLayout meta={meta}>
+    <div class="space-y-6">
+        <h1 class="title capitalize">Jude Séïde</h1>
+        <p class="lowercase sm:tracking-widest">
+            software developer & tech enthusiast based in Montreal, Canada
+        </p>
+        <div class="grid grid-flow-row auto-rows-max sm:grid-cols-[2fr_3fr] gap-y-16 sm:gap-x-16">
+            <Image
+                src={dev}
+                alt="developer illustration"
+                loading="eager"
+                fetchpriority="high"
+            />
+            <div class="xl:w-fit mt-6 leading-6 text-justify">
+                <p class="mb-4">
+                    I'm a results-oriented developer with over a decade of hands-on experience, ranging from nimble
+                    startups to complex enterprise applications.
+                </p>
+                <p class="mb-4">
+                    Currently, I'm part of the
+                    <a
+                        class="cactus-link inline-block"
+                        href="https://www.ssense.com/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Shopify website"
+                    >
+                        SSENSE
+                    </a>
+                    team, serving as a Senior Software Developer.
+                </p>
+                <p class="mb-4">
+                    My journey in software engineering has been a continuous quest for excellence. Passionate about
+                    crafting exceptional software solutions, I'm also a tech enthusiast who thrives on sharing
+                    knowledge.
+                </p>
+                <p class="mb-4">
+                    I'm captivated by technology's profound impact on our world. From influencing our daily lives to
+                    shaping industries, it's clear that software governs much of our existence.
+                </p>
+                <p class="mb-4">
+                    With a track record of optimizing high-performance APIs, navigating complexity, and leading
+                    cross-functional initiatives, I'm dedicated to advocating for innovative technology and championing
+                    novel approaches.
+                </p>
+                <p class="mb-4">
+                    Let's explore the captivating realm of software engineering together!
+                </p>
+            </div>
+        </div>
+        <p>
+            Reach out via
+            <a
+                class="cactus-link inline-block"
+                href="https://ca.linkedin.com/in/judeseide"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="linkedin"
+            >
+                linkedin
+            </a>
+            or
+            <a
+                class="cactus-link inline-block"
+                href="mailto:jude.seide+info@gmail.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="email"
+            >
+                email
+            </a>
+            if you want to chat!
+        </p>
+    </div>
+</PageLayout>

@@ -1,0 +1,36 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import type { HTMLTag, Polymorphic } from 'astro/types';
+import FormattedDate from '../FormattedDate.astro';
+
+type Props<Tag extends HTMLTag> = Polymorphic<{ as: Tag }> & {
+    post: CollectionEntry<'post'>;
+};
+
+const { post, as: Tag = 'h2' } = Astro.props;
+const postDate = post.data.updatedDate ?? post.data.publishDate;
+
+const dateTimeOptions: Intl.DateTimeFormatOptions = {
+    month: 'long',
+};
+---
+
+<Tag class="mb-4">
+    <a href={`/posts/${post.slug}/`} class="cactus-link capitalize" rel="prefetch">
+        {post.data.title}
+    </a>
+</Tag>
+<p class="min-w-[120px] text-gray-500 mb-4">
+    <FormattedDate date={postDate} dateTimeOptions={dateTimeOptions}/>
+</p>
+<q class="line-clamp-3 block italic mb-4 text-justify">{post.data.description}</q>
+<span class="block">
+    <a
+        class="sm:hover:text-accent sm:hover:ml-4 duration-500 text-gray-500"
+        href={`/posts/${post.slug}/`}
+        rel="prefetch"
+        aria-label="Read the post"
+    >
+        read more →
+    </a>
+</span>

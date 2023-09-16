@@ -1,0 +1,68 @@
+---
+import PageLayout from '@/layouts/Base';
+import FormattedDate from '@/components/FormattedDate';
+import DetailedPostPreview from '@/components/blog/DetailedPostPreview';
+import SocialList from '@/components/SocialList';
+import { getAllPosts, sortMDByDate } from '@/utils';
+
+const MAX_POSTS = 5;
+const allPosts = await getAllPosts();
+
+const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS);
+const latestPost = allPostsByDate.shift();
+
+const dateTimeOptions: Intl.DateTimeFormatOptions = {
+    month: 'long',
+};
+---
+
+<PageLayout meta={{ title: 'Home' }}>
+    <section>
+        <h1 class="title mb-8 sm:text-4xl capitalize">Hello, World!</h1>
+        <p class="mb-10 text-justify sm:text-xl xl:pr-96 sm:leading-9">
+            My name is <strong>Jude Séïde</strong> and I'm a <strong>Software Developer</strong> with a knack for <strong>optimizing digital experiences</strong>.
+            With over a <strong>decade of experience</strong> in the industry, I bring a wealth of <strong>expertise</strong> to the table.
+        </p>
+        <SocialList/>
+    </section>
+    <section aria-label="Latest post" class="mt-24">
+        <h2 class="title mb-4">
+            <a href={`/posts/${latestPost.slug}/`} class="sm:hover:cactus-link capitalize" rel="prefetch">
+                {latestPost.data.title}
+            </a>
+        </h2>
+        <p class="min-w-[120px] text-gray-500 mb-4">
+            <FormattedDate date={latestPost.data.publishDate} dateTimeOptions={dateTimeOptions}/>
+        </p>
+        <p class="line-clamp-3 text-justify sm:leading-6 mb-4">
+            {latestPost.data.summary}
+        </p>
+        <span class="block">
+            <a
+                class="sm:hover:text-accent sm:hover:ml-4 duration-500 text-gray-500"
+                href={`/posts/${latestPost.slug}/`}
+                rel="prefetch"
+                aria-label="Read the latest post"
+            >
+                read more →
+            </a>
+        </span>
+    </section>
+    <section aria-label="Latest posts" class="mt-24">
+        <h2 class="title mb-6 sm:text-xl uppercase">Latest posts</h2>
+        <div class="grid grid-flow-row auto-rows-max gap-y-16 sm:grid-cols-[2fr_2fr] sm:gap-x-16">
+            {
+                allPostsByDate.map((p) => (
+                    <div class="w-fit">
+                        <DetailedPostPreview post={p}/>
+                    </div>
+                ))
+            }
+        </div>
+    </section>
+    <section aria-label="View all posts" class="mt-24">
+        <h2 class="mb-6 sm:text-xl lowercase">
+            <a href="/posts/" class="text-accent sm:hover:cactus-link">View all posts</a>
+        </h2>
+    </section>
+</PageLayout>
