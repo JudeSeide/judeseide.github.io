@@ -3,7 +3,7 @@ title: "Reintroducing Engineering into Software Development: Building a Solid Fo
 description: "In the fast-paced world of software development, it's easy to get caught up in the latest trends and technologies."
 summary: "Bringing back the engineering mindset into software development is essential to create software solutions that are not only innovative but also reliable, scalable, and maintainable. Balancing innovation with engineering discipline is the key to building software solutions that stand the test of time and meet the ever-growing demands of the industry."
 publishDate: "19 Oct 2023"
-#updatedDate: "19 Oct 2023"
+updatedDate: "19 Oct 2023"
 coverImage:
     src: "./cover.jpg"
     alt: "debt wall"
@@ -15,7 +15,7 @@ In the fast-paced world of software development, it's easy to get caught up in t
 While innovation is essential, it's equally crucial to maintain a strong engineering foundation.
 Software engineering principles and practices provide the necessary structure and discipline to ensure the development of reliable, scalable, and maintainable software solutions.
 
-In this article, we will explore the importance of bringing back the engineering mindset into software development and discuss strategies to build a solid foundation for successful delivery of high-quality software.
+In this article, we will explore the importance of bringing back the engineering mindset into software development and discuss strategies to build a solid foundation for the successful delivery of high-quality software.
 
 ## Understanding the Core Principles
 Software engineering is not just about writing code; it encompasses a set of fundamental principles that guide the development process.
